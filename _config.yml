@@ -20,11 +20,10 @@
 
 title: Anteros 
 email: kmuhindi@protonmail.ch
-description: >- # this means to ignore newlines until "baseurl:"
- Some thoughts, experiences and the learning path to building on Cardano. 
+description: Some thoughts, experiences and the learning path to building on Cardano. 
 baseurl: "/cck" # the subpath of your site, e.g. /blog
 url: "https://anterosian.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: @jelani_kir
+twitter_username: "@jelani_kir"
 github_username:  anterosian
 
 # Build settings
