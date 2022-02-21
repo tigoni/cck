@@ -11,7 +11,7 @@ From the Haskell website, the definition of the language is: **An advanced, pure
 For this post, I explore what purely functional really means and discuss what that means with compared to an OOP language.
 
 Consider the following Java code:
-```
+```java
 Integer result = 0;
 Integer sum (Integer a, Integer b) {
     result = a + b;
@@ -29,9 +29,8 @@ Using the earlier code snippet, suppose its part of a larger program and some ot
 Another potential issue is what happens if the method is run concurrently by different threads? It's likely a race condition could result as each thread tries to update the mutable and shared variable.
 
 If we were to write a test for the code above, how confident are we that the final result is what we are expecting. After all, we are not sure of what other operations are being performed on `result` pre or post the test. This means that our tests will need to account for such scenarios.
-
 These are some of the issues a pure functional language such as Haskell addresses.
-#### A Purely Functional Language
+#### A Purely Functional Approach 
 In Haskell, the focus is on *what to do* rather than *how to do it*. This means that the problem being solved by the program is decomposed into a series of functions (rather than statements) which are evaluated to get desired values. 
 
 Generally, these functions have the following properties:
@@ -39,7 +38,7 @@ Generally, these functions have the following properties:
 * The function will not have any side effects. This means that there is no mutation of local and non-local variables, reference arguments and input/output streams.
 
 Here's a code snippet of the earlier method written in Haskell.
-```
+```haskell
 sum :: Int -> Int -> Int
 sum a b = a + b
 ```
