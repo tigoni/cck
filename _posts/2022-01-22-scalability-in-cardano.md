@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Scalability In Cardano"
+date: 2022-01-22 16:18:00 -0000
+categories: scalability
+---
+## {{page.title}}
+
+- What is it and how important is it?
+- Scalability as a goal from the onset in Cardano
+- How is it designed to achieve this, approaches
+- What current strategies are already in place
+- The future with more scaling
+-  
+
+### Scalability from the onset
+In all blockchain systems, scalability is a core design issue that is aimed at addressing the problem of how a blockchain can be able to process more transactions even as the network grows. The common description of scalability in a blockchain is usually the mention of transactions per secondi or transaction throughput. The ability of a blockchain to scale it transaction throughput with increased use cases from adoption is what would define it as a scalable blockchain.
+
+The peer-to-peer nature of blockchain systems make scaling a more difficult problem than would be the case in a centralised system. When a transaction is added to a block, the block needs to propagate though the network and be verified and validated by other nodes for it to be considered final. For instance, in Bitcoin the maximum size a block can have is 1MB. A typical transaction has 250 bytes which means on average a block will have 4,000 transactions. The average time taken to create a new block in Bitcoin is 10 minutes. That means that only a total of 7 transactions can be processed every second on the network. As can be deduced, one way to increase the tps is to have a larger block size or to reduce the block creation time. While this is possible, it comes at the expense of decentralization since more bandwidth and storage would be needed by nodes. In blockchain the issues of scaling, decentralization and security are big problems since solving one lead to compromising on the other. It is known as the blockchain trilemma.
+
+Blockchains take different approaches to scaling their networks but in general the techniques fall into two broad categories which are commonly referred to Layer-1 or Layer 2 solutions. Layer-1 scaling means that scaling mechanisms are added into the blockchain protocol itself to improve transaction throughput. An example of layer-1 scaling it a process known as  sharding whereby transactions are split into smaller data-sets and can be processed in parallel. Additionally, nodes are split into segments such that a transaction can be processed within a segment (shard) and does not have to be processed by the entire network, making it faster to process transactions. Ethererium, Tezos and other blockchains adopt this as the scaling technique.
+Layer-2 scaling techniques involve building a new protocol, which is optimised for transactions processing, ontop of the layer-1 blockchain. For instance, state-channels is an approach where an offline channel is open between two trnasacting parties. This channel settles transactions as they occur between the parties and to finalise, the lastest state of the channel is pushed to the main blockchains where balances are updated. This highly improves transaction speed to near instant 'settlement' but comprimises on decentralization to acheive scalability. bitcoin's Lighting Network and Ethereum's Raiden Network are examples of state channels. Another one of the several Layer-2 scaling techniques is side-chains whereby an adjacent blockchain optimised for speed and using a different consensus mechanism is compatible with the main blockchain. A token is used as a two-way peg for value transfers between the side and main chain.   
+ 
+Cardano approaches the scalability problem by using what are known as isomporphic state channels code named Hydra. In IOG's published reasearch paper on scaling titled 'Hydra: Fast Isomorphic State Channels', the team oulines the drawback of the current layer-2 state channel techniques where smart contracts on layer-1 cannot be used as-is on the offline state channels without changes. Hydra simplifies this by allowing the same smart contract infrastructure and code used in layer-1 to be also used in layer-2 offline channels without any changes. 
+Hydra proposes to solve important drawbacks in the current state channel scaling approaches. One, performance issues are still experienced in layer-2 solutions since the limits of the underlying layer-1 blockchain still exist. Two, the contracts used for the layer-2 state channel diverge in structure from the native blockchain in how  state representation is structured leading to different state repsentation. 
+
+Hydra solves both problems by having multiparty state channels which reuse the same exact state in the underlying ledger.By having the exact state representation in the state channels as in the main blockchain, Hydra in effects creates offline ledger siblings which are exactly similar to the main chain in transaction validation and script execution (hence the term isomorphic) and can work in parallel to each other. Once a state channel is closed offline, the same smart contract code can be used on the main chain. 
+An offline protocol called a head is created by a set of parties wishing to transact. Once this is created, parties can engage in trasactions and smart contract execution among themselves in future they can agree to update the main chain with the final set of eUTXOs by commiting to it. Combined with the use of eUTXOs for transactions which can be done in parallel, Hydra provides a novel approach to the scaling problem that promises to make Cardano resillient and scalable as it is adopted more and as use cases increase.

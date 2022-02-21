@@ -1,0 +1,25 @@
+---
+layout: post 
+title: "Smart Contracts and Plutus"
+date: 2022-01-30 11:34:00 -0000
+categories: smart-contracts plutus 
+---
+## {{page.title}}
+
+{{page.date | date: "%Y-%m-%d"}}
+
+
+### Smart Contracts
+The term smart contract was first theorised in the late 1990's by a crytography researcher named Nick Szabo. In an article, he describe smart contracts as an electronic transaction protocol that can execute the terms of a contract with the goal of satisfying common contractual conditions, minimizing malicious or accidental exceptions and the need for trusted third parties and fulfil the economic goals of lowering fraud loss, arbitrations and enforcement costs and other transaction cots. 
+
+A smart contract is a decentralized program written in a secure and unstoppable way to represent an agreement that is automatically and executable and enforcable. As a program it contains functions and data that automatically execute based on a change of internal state. From the definition, its worth noting some of the properties of smart contracts such as being secure which means that a smart contract will be resilient to internal and external conditions that may be unfavorable to its execution. In addition, smart contracts once deployed, cannot be stopped and the only way to reverse or change its execution is by writting another contract and deploying it.
+From a technical perspective in blockchain systems, a smart contract is code that follows an if-else set of rule to execute a transaction based on defined rules. In this case the transaction can be transfer of an sset, sending a notification, registering an entity or other applications. When the blockchain updates, the transaction becomes final and cannot be changed. The participants in the smart contract will have set the terms of the agreement to be executed and signed the contract using their keys. In a typical blockchain transanction, say, Alice sending money to Bob, Alice creates the transaction which has Bobs address in it and broadcasts it to the network locked such that only Bob will be able to unlock the funds and spend them. In a more complex transaction, for example, Bob and Alice want to transact based on some conditions, both Alice and Bob would send funds to a smart contract with the rules defined based on the conditions. The contract would then execute transactions based on the rules defined in it.
+   
+### In the beginning
+In 2009, when Bitcoin was first released it implemented very basic smart contract functionality. Through a limited programming language called Script, Bitcoin smart contracts could only execute very limited logic flows in a determinate amount of time. Later in 2021, an upgrade introduced Taproot which was a set of improvements among them meant to add more capability to execute more complex contracts. Ethereum which came later, had capabilities to allow the implementation of more complex smart contracts and as a result the number of applications possible on the block chain network surged. Ethereum having complex smart contract functionality enable inoovations such as DAOs, DEXes, NFTs and many others. Ethereum, unlike Bitcoin uses a Turing complete language to implement smart contracts. This means that logic and iteration are possible and as a result much more complex scenarios can be implemented for smart contracts. 
+However, the design model of smart contracts which allows complex functionality in Ethereum has also led to code in these contracts having bugs which could be exploited. A famous example of such an exploit is the DAO hack where a smart contract meant for fundarasing for the DAO project was hacked and 150 million dollars drained.
+
+### Smart contracts in Cardano
+In Cardano, smart contract functionality was introduced in one of its five development phases (Goguen) and it added the ability to write decentralised applications which would have smart contracts at the core. With Goguen came two approaches that could be used for developing smart contracts. One was Plutus, a smart contract development and execution language based on the functional progamming language called Haskell. The second is Marlowe which is a domain specific language that allows financial and business experts with no technical knowledge to build financial contracts in a simplified way. Combined, both approaches bring Cardano to a wider range of users. 
+With the design approach taken by Cardano in implmenting smart contracts, critical issues present in Ethereum have been avoided. A case in point is the congestion problem Ethereum experiences resulting in high gase fees. Cardano takes a different approach where transactions do not depend on some global state therefore be executed faster. 
+In general, Cardano smart contracts have addressed the inherent issues present in the Ethereum network by adopting certain engineering approaches. In the long run, the robustness and reliablity on transactions will see more developers moving to Cardano to implement their smart contracts.  
