@@ -5,7 +5,7 @@ date: 2022-02-19 12:45:00 -0000
 categories: haskell programming  
 ---
 #### Understanding Haskell Basics
-I am currently learning Haskell in readiness for writting Cardano smart in the Plutus language (which is based on Haskell). With a background of using OOP languages for a number of years, I am having to revisit and relearn fundamental programming concepts that I hope will make it easier in grasping why Haskell is so different from any language I have used before. This post is the first of a a series where I try to understand Haskell by looking at the defining fundamental principles which describe its features. 
+I am currently learning Haskell in readiness for writting Cardano smart in the Plutus language (which is based on Haskell). With a background of using OOP languages for a number of years, I am having to revisit and relearn fundamental programming concepts that I hope will make it easier in grasping why Haskell is so different from any language I have used before. This post is the first of a a series where I try to understand Haskell by looking at the fundamental computing principles which describe its features. 
 
 From the Haskell website, the definition of the language is: **An advanced, purely functional language**. It also describes its main features as: statically typed, purely functional, type inference capability, concurrent, lazy and using a packages model.
 For this post, I explore what purely functional really means and discuss what that means with compared to an OOP language.
@@ -23,7 +23,7 @@ Two observations can be noted from the above code:
 * The variable `result` is as used here, is in global scope. The method computes the sum of the arguments and assigns the result to that variable. In programming paradigms, this modification of a variable outside the local environment of the method is referred to as a *side-effect*.
 
 The above approach is the norm in imperative programming languages where: (a) variables and statements are steps used to describe how the desired computation should be arrived at, and (b) expressions (variables, methods and operators) form statements are executed to change the state of a program.  
-#### Whats's the problem?
+#### Whats's The Problem Here?
 Using the earlier code snippet, suppose its part of a larger program and some other method later updates or resets the `result` variable?. Right there, we end up having a bug because the desired result is not what we expect. 
 
 Another potential issue is what happens if the method is run concurrently by different threads? It's likely a race condition could result as each thread tries to update the mutable and shared variable.
