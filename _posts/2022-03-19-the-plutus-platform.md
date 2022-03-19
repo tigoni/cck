@@ -5,7 +5,7 @@ date: 2022-03-19 10:39:00 -0000
 categories: plutus programming  
 ---
 
-####Program-ability in blockchain
+#### Program-ability in blockchain
 When it comes to how widely blockchain technology can be applied to a range of use-cases, it somehow depends on the model a blockchain uses for defining how transactions are settled. 
 Bitcoin uses a UTXO model on its ledger. This means that transactions are represented as a series of inputs and outputs that live on the blockchain. The inputs are locked to a pubkey and only the owner of the pubkey can sign the transaction with a corresponding private key in order to unlock those outputs (spending). 
 
@@ -13,10 +13,10 @@ Cardano uses the eUTXO model which extends UTXO by making it possible for the pu
 An extra piece of data can be added to a validator and provides the convinience of have extra data in an output without having to modify the validator. This data is referred to as **Datum**. 
 
 For a transaction to spend the value locked on a script address, ie the validator, it needs to provide a few pieces of information:
-* **Redeemer:** This is the signature required to unlock the output value.
+* **Redeemer:** This is the signature required to unlock the output.
 * **Context:** This data that is related to that transaction and it could be anything from the referenced inputs, the outputs such that you can verify that the outputs referenced by the validator actually exist. 
 
-####The Plutus Platform
+#### The Plutus Platform
 The Plutus Platform is a collection of tools such as environment runtime, SDKs and libraries that work together to enable the development Cardano smart contracts. The platform offers a robust way of applications interacting with the Cardano blockchain by abstracting possible areas of complexity from the application developer and applying constraints on how contracts are evaluated. This model attempts to provide assurance that eliminate the risk of loss during transactions. 
 
 It is designed as a set of components that work together: 
