@@ -8,10 +8,10 @@ categories: plutus programming
 #### Program-ability in blockchain
 When it comes to how widely blockchain technology can be applied to a range of use-cases, it somehow depends on the model a blockchain uses for defining how transactions are settled. 
 Bitcoin uses a UTXO model on its ledger. This means that transactions are represented as a series of inputs and outputs that live on the blockchain. The inputs are locked to a pubkey and only the owner of the pubkey can sign the transaction with a corresponding private key in order to unlock those outputs (spending). 
-
+<a href="https://ibb.co/0BsKXCt"><img src="https://i.ibb.co/n3PB07C/Method-Draw-Image-1.png" alt="Method-Draw-Image-1" border="0"></a>
 Cardano uses the eUTXO model which extends UTXO by making it possible for the pubkeys that lock outputs to be replaced with small scripts called validators. The validator is deployed as actual script address and lives on the blockchain as an output.
 An extra piece of data can be added to a validator and provides the convinience of have extra data in an output without having to modify the validator. This data is referred to as **Datum**. 
-
+<a href="https://ibb.co/HHXbZFZ"><img src="https://i.ibb.co/2k5CJnJ/Method-Draw-Image-2.png" alt="Method-Draw-Image-2" border="0"></a>
 For a transaction to spend the value locked on a script address, ie the validator, it needs to provide a few pieces of information:
 * **Redeemer:** This is the signature required to unlock the output.
 * **Context:** This data that is related to that transaction and it could be anything from the referenced inputs, the outputs such that you can verify that the outputs referenced by the validator actually exist. 
